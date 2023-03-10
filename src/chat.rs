@@ -7,14 +7,13 @@ use std::fs::File;
 use std::io::Error;
 use std::io::{BufWriter, Write};
 use termion::{clear, color, cursor};
-use thiserror::Error;
 
 pub const OPENAI_DEFAULT_ENDPOINT: &str = "https://api.openai.com/v1/chat/completions";
 
 #[non_exhaustive]
-#[derive(Debug, Error)]
+#[derive(Debug, thiserror::Error)]
 pub enum ChatError {
-    #[error("Missing environement variables \nDefine OPENAI_TOKEN.")]
+    #[error("Missing environement variables - define OPENAI_TOKEN")]
     MissingEnvVariable,
     #[error("API Error. Message content {0}")]
     APIError(String),
@@ -71,7 +70,7 @@ impl ChatGPTCall {
                 // Use the token in case of OpenAI endpoint
                 let s = match token.as_ref() {
                     Ok(s) => s,
-                    Err(_e) => panic!("{}", ChatError::MissingEnvVariable.to_string()),
+                    Err(_e) => return Err(ChatError::MissingEnvVariable.to_string().into()),
                 };
 
                 let response = client
