@@ -4,6 +4,9 @@ A lightweight ChatGPT CLI - Chat completion.
 
 Interact with ChatGPT from your terminal and save the conversation in a text file.
 
+![CLI Example](assets/screenshot.png)
+
+
 ## Install 
 
 ```
