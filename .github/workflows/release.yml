@@ -68,4 +68,3 @@ jobs:
           push: true
           tags: |
             imadelh/gli:latest
-            ${{ github.ref }}

@@ -7,7 +7,24 @@ Interact with ChatGPT from your terminal and save the conversation in a text fil
 ![CLI Example](assets/screenshot.png)
 
 
-## Download 
+## Get started 
+
+### Docker
+
+```
+# Pull the docker container
+docker pull imadelh/gli:latest
+
+# Help
+docker run --rm -it imadelh/gli ./gli -h
+
+# Run with Openai token 
+export OPENAI_TOKEN=xxx
+docker run --rm -it imadelh/gli ./gli
+
+# Run with a free endpoint 
+docker run --rm -it imadelh/gli ./gli --endpoint 'https://chatgpt-api.shn.hk/v1/'
+```
 
 ### Binary
 
@@ -20,10 +37,6 @@ tar -xvf gli-x86_64-apple-darwin.tar.gz
 wget https://github.com/imadelh/Chat-CLI/releases/download/v0.1.21/gli-x86_64-unknown-linux-gnu.tar.gz
 tar -xvf gli-x86_64-unknown-linux-gnu.tar.gz
 ```
-
-### Docker
-
-WiP
 
 ## Usage 
 
@@ -56,7 +69,7 @@ export OPENAI_TOKEN=<put your key here - https://platform.openai.com/account/api
 ./gli --output 'my_chat'
 ```
 
-- Using free endpoint [ChatGPTAPIFree](https://github.com/ayaka14732/ChatGPTAPIFree)
+- Using a free endpoint [ChatGPTAPIFree](https://github.com/ayaka14732/ChatGPTAPIFree)
 ```
 # Token is not required
 ./gli --endpoint 'https://chatgpt-api.shn.hk/v1/'
@@ -67,6 +80,7 @@ export OPENAI_TOKEN=<put your key here - https://platform.openai.com/account/api
 ```
 cargo run -- -h
 cargo build --release
+docker build -t gli -f Dockerfile .
 ```
 
 Contributions are welcome.
