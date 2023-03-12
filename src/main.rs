@@ -3,6 +3,7 @@ use std::env;
 use std::fs::File;
 use std::io::Write;
 use std::path::Path;
+use std::process;
 use std::time::{SystemTime, UNIX_EPOCH};
 use structopt::clap::AppSettings;
 use structopt::StructOpt;
@@ -12,7 +13,10 @@ use gli::chat::{ChatGPTCall, ChatGPTMessage, OPENAI_DEFAULT_ENDPOINT};
 #[derive(StructOpt)]
 #[structopt(
     name = "chatgpt-cli",
-    about = "A simple CLI for ChatGPT.\nRequires OPENAI_TOKEN env variable when using OpenAI endpoint.",
+    about = "
+    A simple CLI for ChatGPT.
+    Requires OPENAI_TOKEN env variable when using OpenAI endpoint.
+    ",
     global_settings = &[AppSettings::ColoredHelp, AppSettings::GlobalVersion]
 )]
 struct Cli {
@@ -61,7 +65,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let file = File::create(Path::new(&file_name))?;
 
     println!(
-        "{}=== Conversation saved at: {} ===",
+        "{}=== Conversation saved at: {} === \nType 'exit' to exit.
+        ",
         color::Fg(color::LightBlue),
         &file_name,
     );
@@ -69,6 +74,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     loop {
         let input = read_input("\n>User: ")?;
+        if input == "exit".to_string() {
+            process::exit(1);
+        }
         let one_message = ChatGPTMessage {
             role: "user".to_string(),
             content: input,
