@@ -20,7 +20,7 @@ docker run --rm -it imadelh/gli ./gli -h
 
 # Run with Openai token 
 export OPENAI_TOKEN=xxx
-docker run --rm -it imadelh/gli ./gli
+docker run --rm -it -e OPENAI_TOKEN=$OPENAI_TOKEN imadelh/gli ./gli
 
 # Run with a free endpoint 
 docker run --rm -it imadelh/gli ./gli --endpoint 'https://chatgpt-api.shn.hk/v1/'
