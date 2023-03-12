@@ -83,7 +83,7 @@ cargo build --release
 docker build -t gli -f Dockerfile .
 ```
 
-Contributions are welcome.
+ This my first Rust project to learn the basics, contributions are welcome.
 
 TODO: 
 - Add more error messages
