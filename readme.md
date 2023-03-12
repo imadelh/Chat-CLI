@@ -87,7 +87,7 @@ docker build -t gli -f Dockerfile .
 
 TODO: 
 - Add more error messages
-- Support multiple models
+- Support multiple models and system prompt
 - Continue from an existing conversation (from a file)
 - Add tests
 
