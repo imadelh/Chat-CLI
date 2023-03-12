@@ -50,6 +50,7 @@ jobs:
     needs:
       - "upload-assets"
     runs-on: "ubuntu-latest"
+    environment: release
     steps:
       - name: "Check out the repo"
         uses: actions/checkout@v3
