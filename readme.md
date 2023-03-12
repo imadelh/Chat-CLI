@@ -18,7 +18,7 @@ docker pull imadelh/gli:latest
 # Help
 docker run --rm -it imadelh/gli ./gli -h
 
-# Run with Openai token 
+# Run with Openai token - https://platform.openai.com/account/api-keys
 export OPENAI_TOKEN=xxx
 docker run --rm -it -e OPENAI_TOKEN=$OPENAI_TOKEN imadelh/gli ./gli
 
