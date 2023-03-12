@@ -7,12 +7,23 @@ Interact with ChatGPT from your terminal and save the conversation in a text fil
 ![CLI Example](assets/screenshot.png)
 
 
-## Install 
+## Download 
+
+### Binary
 
 ```
-wget xxx
-chmod +x gli
+# Macos
+wget https://github.com/imadelh/Chat-CLI/releases/download/v0.1.2/gli-v0.1.2-x86_64-apple-darwin.tar.gz
+tar -xvf gli-v0.1.2-x86_64-apple-darwin.tar.gz
+
+# Linux
+wget https://github.com/imadelh/Chat-CLI/releases/download/v0.1.2/gli-v0.1.2-x86_64-unknown-linux-gnu.tar.gz
+tar -xvf gli-v0.1.2-x86_64-unknown-linux-gnu.tar.gz
 ```
+
+### Docker
+
+WiP
 
 ## Usage 
 

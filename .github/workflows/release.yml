@@ -22,8 +22,8 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-latest
-          - macos-latest
+          - ubuntu-20.04
+          - macos-12.0
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
