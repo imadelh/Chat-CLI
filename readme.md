@@ -13,12 +13,12 @@ Interact with ChatGPT from your terminal and save the conversation in a text fil
 
 ```
 # Macos
-wget https://github.com/imadelh/Chat-CLI/releases/download/v0.1.2/gli-v0.1.2-x86_64-apple-darwin.tar.gz
-tar -xvf gli-v0.1.2-x86_64-apple-darwin.tar.gz
+wget https://github.com/imadelh/Chat-CLI/releases/download/v0.1.21/gli-x86_64-apple-darwin.tar.gz
+tar -xvf gli-x86_64-apple-darwin.tar.gz
 
 # Linux
-wget https://github.com/imadelh/Chat-CLI/releases/download/v0.1.2/gli-v0.1.2-x86_64-unknown-linux-gnu.tar.gz
-tar -xvf gli-v0.1.2-x86_64-unknown-linux-gnu.tar.gz
+wget https://github.com/imadelh/Chat-CLI/releases/download/v0.1.21/gli-x86_64-unknown-linux-gnu.tar.gz
+tar -xvf gli-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 ### Docker
